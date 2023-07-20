@@ -4,6 +4,17 @@ Repacking data back into a disc file is surely taking time, especially how big t
 
 Luckily we can load the unpacked disc directly into the game, so this can save our time when testing the mod.
 
+## How this trick work?
+
+The game has check this following path for its data:
+- ./disc
+- ../../../DATA/resource_win/disc
+- ../../../DATA/resource_win/disc_test/
+
+Path that end with `/` is a folder.
+
+So the game will try load that list in order.
+
 ## Moving unpacked disc
 
 First, we need to move the unpacked disc to the required path.
@@ -37,7 +48,7 @@ Or... We can just rename it to something else, for example, `not_disc` or `disc.
 
 This is required to make sure the game does not load that `disc` file and use alternative disc data.
 
-## Another tip
+## Another tips
 
 Instead of putting all data in that folder, you can link your unpacked disc folder with the required folder.
 
